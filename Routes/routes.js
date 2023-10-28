@@ -222,6 +222,29 @@ router.post('/bookingsCar', async (req, res) => {
 
 
 
+// Define a route to get bike bookings
+router.get('/bookingsBike', async (req, res) => {
+  try {
+    const bikeBookings = await BikeBooking.find();
+    res.status(200).json(bikeBookings);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error retrieving bike bookings' });
+  }
+});
+
+// Define a route to get car bookings
+router.get('/bookingsCar', async (req, res) => {
+  try {
+    const carBookings = await CarBooking.find();
+    res.status(200).json(carBookings);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error retrieving car bookings' });
+  }
+});
+
+
 
 
 
