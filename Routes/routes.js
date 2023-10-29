@@ -181,7 +181,7 @@ router.get('/api/cars', async (req, res) => {
       res.status(201).json(newBooking); // Return the created booking as a JSON response
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: 'Error creating a bike booking' });
+      res.status(500).json({ message: 'Error creating a bike booking', error: error.message });
     }
   });
   
