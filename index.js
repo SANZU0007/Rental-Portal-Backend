@@ -12,9 +12,20 @@ const app=express();
 
 app.use(express.json());
 
+
+
+const corsOptions = {
+    origin: 'https://rental-portal001.onrender.com',
+  };
+
+
+
 app.use(cors())
 
 app.use('/api',routes)
+
+  app.use(cors(corsOptions));
+  
 
 
 
